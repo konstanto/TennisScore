@@ -66,7 +66,6 @@ angular.module('ngBoilerplate.score', [
         me.isLoaded = false;
         if (!me.isLoaded) {
             $http.get("http://konstantyner.org/tennissporten/score.json").then(function (response) {
-                console.log('hej');
                 var data = response.data;
                 me.scoreData.isTiebreak = data.isTiebreak;
                 for (var i = 0; me.scoreData.players.length > i; i++) {

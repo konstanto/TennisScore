@@ -46,7 +46,6 @@ angular.module('ngBoilerplate.watch', [
 
         me.updateData = function(){
             $http.get("http://konstantyner.org/tennissporten/score.json").then(function (response) {
-                console.log("hej");
                 var data = response.data;
                 me.scoreData.isTiebreak = data.isTiebreak;
                 for (var i = 0; me.scoreData.players.length > i; i++) {
@@ -62,6 +61,9 @@ angular.module('ngBoilerplate.watch', [
 
         me.updateData();
 
+        setTimeout(function(){
+            window.location.reload(true);
+        }, 1000*60*10);
 
 
     })
