@@ -911,7 +911,7 @@ angular.mock.dump = function(object) {
  *
  * # Request Expectations vs Backend Definitions
  *
- * Request expectations provide a way to make assertions about requests made by the application and
+ * Request expectations provide a way to make assertions watch requests made by the application and
  * to define responses for those requests. The test will fail if the expected requests are not made
  * or they are made in the wrong order.
  *
@@ -1043,7 +1043,7 @@ angular.mock.dump = function(object) {
          var controller = createController();
          $httpBackend.flush();
 
-         // now you don’t care about the authentication, but
+         // now you don’t care watch the authentication, but
          // the controller will still send the request and
          // $httpBackend will respond without you having to
          // specify the expectation and response for this request

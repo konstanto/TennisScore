@@ -43,7 +43,7 @@ function stateContext(el) {
  * Here's an example of how you'd use ui-sref and how it would compile. If you have the 
  * following template:
  * <pre>
- * <a ui-sref="score">Home</a> | <a ui-sref="about">About</a>
+ * <a ui-sref="score">Home</a> | <a ui-sref="watch">About</a>
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">
@@ -54,7 +54,7 @@ function stateContext(el) {
  * 
  * Then the compiled html would be (assuming Html5Mode is off):
  * <pre>
- * <a href="#/score" ui-sref="score">Home</a> | <a href="#/about" ui-sref="about">About</a>
+ * <a href="#/score" ui-sref="score">Home</a> | <a href="#/watch" ui-sref="watch">About</a>
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">

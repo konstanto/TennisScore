@@ -1,12 +1,11 @@
 <div class="scoreMain">
     <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li class="active"><a href="#">Normal game</a></li>
-        <li><a href="#">Tiebreak</a></li>
+        <li ng-class="{active: scoreData.isTiebreak == 0}"><a href="#" ng-click="changeGameType()">Normal game</a></li>
+        <li ng-class="{active: scoreData.isTiebreak == 1}"><a href="#" ng-click="changeGameType()">Tiebreak</a></li>
     </ul>
 
-    <div class="scoreContent">
+    <div class="scoreContent" ng-if="scoreData.isTiebreak == 0">
         <div class="row text-center">
-            <form>
                 <div ng-repeat="player in players">
                     <div class="col-xs-6">
                         <h1>{{player.name}}</h1>
@@ -65,9 +64,38 @@
 
                     </div>
                 </div>
-
-
-            </form>
+            <button class="btn btn-sm btn-danger" ng-click="resetMatch()"><span class="glyphicon glyphicon-refresh"></span> Reset match</button>
         </div>
     </div>
+
+    <div class="scoreContent" ng-if="scoreData.isTiebreak == 1">
+        <div class="row text-center">
+            <div ng-repeat="player in players">
+                <div class="col-xs-6">
+                    <h1>{{player.name}}</h1>
+                    <div class="row">
+                        <div class="pointGroup clearfix">
+                            <div class="col-xs-12">
+                                <p class="small">Point</p>
+                            </div>
+                            <div class="col-xs-6">
+                                <button ng-click="decreaseTiebreakPoint(player)" class="btn btn-lg btn-block btn-default"><span
+                                        class="glyphicon glyphicon-minus"></span></button>
+                            </div>
+                            <div class="col-xs-6">
+                                <button ng-click="increaseTiebreakPoint(player)" class="btn btn-lg btn-block btn-default"><span
+                                        class="glyphicon glyphicon-plus"></span></button>
+                            </div>
+                            <div class="col-xs-12">
+                                <h1>{{player.tieBreak}}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <button class="btn btn-sm btn-danger" ng-click="resetTiebreak()"><span class="glyphicon glyphicon-refresh"></span> Reset tiebreak</button>
+        </div>
+    </div>
+
 </div>

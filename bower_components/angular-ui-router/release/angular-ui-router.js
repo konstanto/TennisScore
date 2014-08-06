@@ -1686,12 +1686,12 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory,           $
    * // state() returns $stateProvider, so you can chain state declarations.
    * $stateProvider
    *   .state("score", {})
-   *   .state("about", {})
+   *   .state("watch", {})
    *   .state("contacts", {});
    * </pre>
    *
-   * @param {string} name A unique state name, e.g. "score", "about", "contacts".
-   * To create a parent/child state use a dot, e.g. "about.sales", "score.newest".
+   * @param {string} name A unique state name, e.g. "score", "watch", "contacts".
+   * To create a parent/child state use a dot, e.g. "watch.sales", "score.newest".
    * @param {object} definition State configuration object.
    */
   this.state = state;
@@ -2203,7 +2203,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory,           $
      * $state.includes("contacts.details"); // returns true
      * $state.includes("contacts.details.item"); // returns true
      * $state.includes("contacts.list"); // returns false
-     * $state.includes("about"); // returns false
+     * $state.includes("watch"); // returns false
      * </pre>
      *
      * @description
@@ -2266,7 +2266,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory,           $
      *
      * @example
      * <pre>
-     * expect($state.href("about.person", { person: "bob" })).toEqual("/about/bob");
+     * expect($state.href("watch.person", { person: "bob" })).toEqual("/watch/bob");
      * </pre>
      *
      * @param {string|object} stateOrName The state name or state object you'd like to generate a url from.
@@ -2856,7 +2856,7 @@ function stateContext(el) {
  * Here's an example of how you'd use ui-sref and how it would compile. If you have the 
  * following template:
  * <pre>
- * <a ui-sref="score">Home</a> | <a ui-sref="about">About</a>
+ * <a ui-sref="score">Home</a> | <a ui-sref="watch">About</a>
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">
@@ -2867,7 +2867,7 @@ function stateContext(el) {
  * 
  * Then the compiled html would be (assuming Html5Mode is off):
  * <pre>
- * <a href="#/score" ui-sref="score">Home</a> | <a href="#/about" ui-sref="about">About</a>
+ * <a href="#/score" ui-sref="score">Home</a> | <a href="#/watch" ui-sref="watch">About</a>
  * 
  * <ul>
  *     <li ng-repeat="contact in contacts">
