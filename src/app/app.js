@@ -2,7 +2,7 @@ angular.module( 'ngBoilerplate', [
   'templates-app',
   'templates-common',
   'ngBoilerplate.score',
-  'ngBoilerplate.about',
+  'ngBoilerplate.watch',
   'ui.router'
 ])
 

@@ -1,0 +1,67 @@
+<div class="scoreMain">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li class="disabled" ng-class="{active: scoreData.isTiebreak == 0}"><a>Normal game</a></li>
+        <li class="disabled" ng-class="{active: scoreData.isTiebreak == 1}"><a>Tiebreak</a></li>
+    </ul>
+
+    <div class="scoreContent" ng-if="scoreData.isTiebreak == 0">
+        <div class="row text-center">
+            <div ng-repeat="player in players">
+                <div class="col-xs-6">
+                    <h1>{{player.name}}</h1>
+                    <div class="row">
+                        <div class="pointGroup clearfix">
+                            <div class="col-xs-12">
+                                <p class="small">Point</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h1>{{pointArray[player.point]}}</h1>
+                            </div>
+                        </div>
+
+                        <div class="pointGroup clearfix">
+                            <div class="col-xs-12">
+                                <p class="small">Party</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h1>{{player.party}}</h1>
+                            </div>
+                        </div>
+
+                        <div class="pointGroup clearfix">
+                            <div class="col-xs-12">
+                                <p class="small">Set</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h1>{{player.set}}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scoreContent" ng-if="scoreData.isTiebreak == 1">
+        <div class="row text-center">
+            <div ng-repeat="player in players">
+                <div class="col-xs-6">
+                    <h1>{{player.name}}</h1>
+                    <div class="row">
+                        <div class="pointGroup clearfix">
+                            <div class="col-xs-12">
+                                <p class="small">Point</p>
+                            </div>
+                            <div class="col-xs-12">
+                                <h1>{{player.tieBreak}}</h1>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

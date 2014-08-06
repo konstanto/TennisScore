@@ -1,9 +1,4 @@
-angular.module('templates-app', ['watch/watch.tpl.html', 'score/score.tpl.html']);
-
-angular.module("watch/watch.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("watch/watch.tpl.html",
-    "");
-}]);
+angular.module('templates-app', ['score/score.tpl.html', 'watch/watch.tpl.html']);
 
 angular.module("score/score.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("score/score.tpl.html",
@@ -104,6 +99,77 @@ angular.module("score/score.tpl.html", []).run(["$templateCache", function($temp
     "                </div>\n" +
     "            </div>\n" +
     "            <button class=\"btn btn-sm btn-danger\" ng-click=\"resetTiebreak()\"><span class=\"glyphicon glyphicon-refresh\"></span> Reset tiebreak</button>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "</div>");
+}]);
+
+angular.module("watch/watch.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("watch/watch.tpl.html",
+    "<div class=\"scoreMain\">\n" +
+    "    <ul class=\"nav nav-tabs nav-justified\" role=\"tablist\">\n" +
+    "        <li class=\"disabled\" ng-class=\"{active: scoreData.isTiebreak == 0}\"><a>Normal game</a></li>\n" +
+    "        <li class=\"disabled\" ng-class=\"{active: scoreData.isTiebreak == 1}\"><a>Tiebreak</a></li>\n" +
+    "    </ul>\n" +
+    "\n" +
+    "    <div class=\"scoreContent\" ng-if=\"scoreData.isTiebreak == 0\">\n" +
+    "        <div class=\"row text-center\">\n" +
+    "            <div ng-repeat=\"player in players\">\n" +
+    "                <div class=\"col-xs-6\">\n" +
+    "                    <h1>{{player.name}}</h1>\n" +
+    "                    <div class=\"row\">\n" +
+    "                        <div class=\"pointGroup clearfix\">\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <p class=\"small\">Point</p>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <h1>{{pointArray[player.point]}}</h1>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "\n" +
+    "                        <div class=\"pointGroup clearfix\">\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <p class=\"small\">Party</p>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <h1>{{player.party}}</h1>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "\n" +
+    "                        <div class=\"pointGroup clearfix\">\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <p class=\"small\">Set</p>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <h1>{{player.set}}</h1>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                </div>\n" +
+    "            </div>\n" +
+    "        </div>\n" +
+    "    </div>\n" +
+    "\n" +
+    "    <div class=\"scoreContent\" ng-if=\"scoreData.isTiebreak == 1\">\n" +
+    "        <div class=\"row text-center\">\n" +
+    "            <div ng-repeat=\"player in players\">\n" +
+    "                <div class=\"col-xs-6\">\n" +
+    "                    <h1>{{player.name}}</h1>\n" +
+    "                    <div class=\"row\">\n" +
+    "                        <div class=\"pointGroup clearfix\">\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <p class=\"small\">Point</p>\n" +
+    "                            </div>\n" +
+    "                            <div class=\"col-xs-12\">\n" +
+    "                                <h1>{{player.tieBreak}}</h1>\n" +
+    "                            </div>\n" +
+    "                        </div>\n" +
+    "                    </div>\n" +
+    "\n" +
+    "                </div>\n" +
+    "            </div>\n" +
     "        </div>\n" +
     "    </div>\n" +
     "\n" +

@@ -41,8 +41,6 @@ angular.module('ngBoilerplate.score', [
     .controller('ScoreCtrl', function ScoreController($scope, $http) {
         var me = $scope;
 
-        me.gameType = "normal";
-
         me.pointArray = ["0", "15", "30", "40", "Ad"];
 
         me.scoreData = {
@@ -115,7 +113,6 @@ angular.module('ngBoilerplate.score', [
             var otherPlayer = me.players[otherPlayerId];
 
             if (player.point === 3 && otherPlayer.point === 4) {
-                player.point++;
                 otherPlayer.point--;
             }
 
