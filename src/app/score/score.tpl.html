@@ -1,0 +1,73 @@
+<div class="scoreMain">
+    <ul class="nav nav-tabs nav-justified" role="tablist">
+        <li class="active"><a href="#">Normal game</a></li>
+        <li><a href="#">Tiebreak</a></li>
+    </ul>
+
+    <div class="scoreContent">
+        <div class="row text-center">
+            <form>
+                <div ng-repeat="player in players">
+                    <div class="col-xs-6">
+                        <h1>{{player.name}}</h1>
+                        <div class="row">
+                            <div class="pointGroup clearfix">
+                                <div class="col-xs-12">
+                                    <p class="small">Point</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="decreasePoint(player)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-minus"></span></button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="increasePoint(player, $index)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h1>{{pointArray[player.point]}}</h1>
+                                </div>
+                            </div>
+
+                            <div class="pointGroup clearfix">
+                                <div class="col-xs-12">
+                                    <p class="small">Party</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="decreaseParty(player)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-minus"></span></button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="increaseParty(player)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h1>{{player.party}}</h1>
+                                </div>
+                            </div>
+
+                            <div class="pointGroup clearfix">
+                                <div class="col-xs-12">
+                                    <p class="small">Set</p>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="decreaseSet(player)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-minus"></span></button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button ng-click="increaseSet(player)" class="btn btn-lg btn-block btn-default"><span
+                                            class="glyphicon glyphicon-plus"></span></button>
+                                </div>
+                                <div class="col-xs-12">
+                                    <h1>{{player.set}}</h1>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
