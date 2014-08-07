@@ -1,4 +1,4 @@
-angular.module('templates-app', ['score/score.tpl.html', 'watch/watch.tpl.html']);
+angular.module('templates-app', ['score/score.tpl.html', 'watchScore/watchScore.tpl.html']);
 
 angular.module("score/score.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("score/score.tpl.html",
@@ -105,8 +105,8 @@ angular.module("score/score.tpl.html", []).run(["$templateCache", function($temp
     "</div>");
 }]);
 
-angular.module("watch/watch.tpl.html", []).run(["$templateCache", function($templateCache) {
-  $templateCache.put("watch/watch.tpl.html",
+angular.module("watchScore/watchScore.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("watchScore/watchScore.tpl.html",
     "<div class=\"scoreMain\">\n" +
     "    <ul class=\"nav nav-tabs nav-justified\" role=\"tablist\">\n" +
     "        <li class=\"disabled\" ng-class=\"{active: scoreData.isTiebreak == 0}\"><a>Normal game</a></li>\n" +

@@ -1,22 +1,22 @@
-angular.module('ngBoilerplate.watch', [
+angular.module('ngBoilerplate.watchScore', [
   'ui.router',
   'placeholders',
   'ui.bootstrap'
 ]).config([
   '$stateProvider',
   function config($stateProvider) {
-    $stateProvider.state('watch', {
-      url: '/watch',
+    $stateProvider.state('watchScore', {
+      url: '/watchScore',
       views: {
         'main': {
-          controller: 'WatchCtrl',
-          templateUrl: 'watch/watch.tpl.html'
+          controller: 'WatchScoreCtrl',
+          templateUrl: 'watchScore/watchScore.tpl.html'
         }
       },
       data: { pageTitle: 'What is It?' }
     });
   }
-]).controller('WatchCtrl', [
+]).controller('WatchScoreCtrl', [
   '$scope',
   '$http',
   function AboutCtrl($scope, $http) {
