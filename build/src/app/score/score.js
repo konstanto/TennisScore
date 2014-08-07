@@ -48,7 +48,7 @@ angular.module('ngBoilerplate.score', [
     };
     me.isLoaded = false;
     if (!me.isLoaded) {
-      $http.get('http://konstantyner.org/tennissporten/score.json').then(function (response) {
+      $http.get('score.json').then(function (response) {
         var data = response.data;
         me.scoreData.isTiebreak = data.isTiebreak;
         for (var i = 0; me.scoreData.players.length > i; i++) {
@@ -65,7 +65,7 @@ angular.module('ngBoilerplate.score', [
       if (me.isLoaded) {
         $http({
           method: 'POST',
-          url: 'http://konstantyner.org/tennissporten/tennisScore.php',
+          url: 'tennisScore.php',
           data: 'players=' + angular.toJson(me.scoreData),
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
         });

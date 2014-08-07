@@ -49,7 +49,7 @@ angular.module('ngBoilerplate.watch', [
     };
     me.players = me.scoreData.players;
     me.updateData = function () {
-      $http.get('http://konstantyner.org/tennissporten/score.json').then(function (response) {
+      $http.get('score.json').then(function (response) {
         var data = response.data;
         me.scoreData.isTiebreak = data.isTiebreak;
         for (var i = 0; me.scoreData.players.length > i; i++) {
